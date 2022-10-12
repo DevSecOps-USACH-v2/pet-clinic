@@ -44,13 +44,3 @@ steps:
   inputs:
     SonarCloud: 'Sonarcloud'
     organization: 'devops-franccesca'
-
-- stage: DAST
-jobs:
-- job: DAST
-  steps:
-    - script:
-      docker pull owasp/zap2docker-stable
-      docker run --rm -v $(pwd):/zap/wrk/:rw -t owasp/zap2docker-stable zap-baseline.py -t http://20.226.202.177:8085 -r DAST.html
-      continueOnError: true
-      displayName: DAST OWASP ZAP
