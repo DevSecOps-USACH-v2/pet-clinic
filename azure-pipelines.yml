@@ -38,3 +38,9 @@ steps:
     projectName: 'pet-clinic'
     scanPath: '$(Build.SourcesDirectory)/build/libs'
     format: 'HTML'
+    
+
+- task: sonarcloud-buildbreaker@2
+  inputs:
+    SonarCloud: 'Sonarcloud'
+    organization: 'devops-franccesca'
